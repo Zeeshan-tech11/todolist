@@ -1,0 +1,61 @@
+.container{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: azure;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 1000px;
+}
+.container h1{
+    font-size: 4rem;
+    color: cadetblue;
+    margin-bottom: 8rem;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+}
+.head input{
+    width: 80%;
+    height: 30px;
+    outline: none;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    color: blueviolet;
+    border-bottom: 2px solid skyblue;
+}
+.head input::placeholder{
+    font-size: 1.5rem;
+}
+.add{
+    width: 4rem;
+    background: maroon;
+    color: white;
+    height: 2rem;
+}
+.list{
+    margin: .5rem;
+    padding: 2%;
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: space-between;
+}
+.list:nth-child(2n){
+    background-color: cornflowerblue;
+}
+input[type="checkbox"]{
+    zoom: 2;
+}
+i{
+    color: red;
+}
+.mark{
+    text-decoration: line-through;
+}
