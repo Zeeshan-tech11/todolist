@@ -4,7 +4,7 @@ let btn=document.querySelector('.add')
 let inputv=""
 
 
-
+// on add key press
 btn.addEventListener('click',(e)=>{
     data={
         0:inputv
@@ -26,40 +26,43 @@ input.addEventListener('keyup',(e)=>{
     inputv=e.target.value;
 })
 
-const addtolist=(todo)=>{
-    let total=document.querySelectorAll('.list').length
-if(todo){
-    let div=document.createElement('div')
-    div.setAttribute('class','list')
-    div.innerHTML=`
-              <input type="checkbox" name="zee" id="idx${total+1}">
-              <label for="idx${total+1}">${todo}</label>
-              <i class="fa-solid fa-trash"></i>
 
-    `
-    display.prepend(div)
-    // added to del
-    inputv="";
+// without using database .json
+// const addtolist=(todo)=>{
+//     let total=document.querySelectorAll('.list').length
+// if(todo){
+//     let div=document.createElement('div')
+//     div.setAttribute('class','list')
+//     div.innerHTML=`
+//               <input type="checkbox" name="zee" id="idx${total+1}">
+//               <label for="idx${total+1}">${todo}</label>
+//               <i class="fa-solid fa-trash"></i>
 
-    // let i=document.querySelectorAll('i')
-    // for(let id=0;id<i.length;id++){
-    //     i[id].addEventListener('click',(e)=>{
-    //         let parent=e.path[1]
-    //        parent.remove();
-    //     })
-    // }
-  // added to checkbox
-  let chkbox=document.querySelectorAll('.list input')
-  for(let idc=0;idc<chkbox.length;idc++){
-    chkbox[idc].addEventListener('click',(e)=>{
-        console.log(e);
-      })
-}
+//     `
+//     display.prepend(div)
+//     // added to del
+//     inputv="";
+
+//     // let i=document.querySelectorAll('i')
+//     // for(let id=0;id<i.length;id++){
+//     //     i[id].addEventListener('click',(e)=>{
+//     //         let parent=e.path[1]
+//     //        parent.remove();
+//     //     })
+//     // }
+//   // added to checkbox
+//   let chkbox=document.querySelectorAll('.list input')
+//   for(let idc=0;idc<chkbox.length;idc++){
+//     chkbox[idc].addEventListener('click',(e)=>{
+//         console.log(e);
+//       })
+// }
   
-}
-}
+// }
+// }
+
 const displayList=(data)=>{
-    console.log(data);
+    // console.log(data);
     for(let i=0;i<data.length;i++){
      let todo=data[i]['length'];
      let div=document.createElement('div')
@@ -70,9 +73,10 @@ const displayList=(data)=>{
     <i class="fa-solid fa-trash "id=${i+10}></i>
  
     `
-    let icon=document.querySelector('i')
-    icon.addEventListener('click',deldata)
     display.prepend(div)
+    let icon=document.getElementById(`${i+10}`)
+    icon.addEventListener('click',deldata)
+    // display.prepend(div)
     }
     
  
